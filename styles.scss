@@ -1,0 +1,155 @@
+$body-text: "Arial", sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $body-text;
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 20% 30% 30% 20%;
+  grid-template-areas:
+  "title . . . "
+  "filter1 bar1 bar1 ."
+  "filter2 bar2 bar2 ."
+  "filter3 bar3 bar3 ."
+  "filter4 bar4 bar4 ."
+  ". button button .";
+}
+
+h2 {
+  color: #d93025;
+  font-size: 1.2rem;
+  font-weight: normal;
+  padding: 0.8% 0 0.8% 2.9%;
+  text-align: left;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #ebebeb;
+}
+
+p {
+  grid-area: title;
+  justify-self: start;
+  padding-bottom: 5%;
+  padding-left: 15%;
+}
+
+.filter {
+  font-size: 0.8rem;
+  justify-self: start;
+  padding-left: 15%;
+  padding-top: 3%;
+  &1 {
+    grid-area: filter1;
+  }
+  &2 {
+    grid-area: filter2;
+  }
+  &3 {
+    grid-area: filter3;
+  }
+  &4 {
+    grid-area: filter4;
+  }
+}
+
+.advanced-navbar {
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  li {
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 5px 15px 5px 5px;
+  }
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+main {
+  text-align: center;
+}
+
+img {
+  padding-bottom: 2%;
+  width: 22%;
+  &.logo {
+    padding: 1% 0 1% 1%;
+    width: 8%;
+  }
+}
+
+input[type="text"] {
+  border: 1px solid #dfe1e5;
+  border-radius: 25px;
+  display: block;
+  margin: 0 auto 2% auto;
+  padding: 1.1%;
+  width: 45%;
+  &:hover {
+    box-shadow: 0 0 10px #dfe1e5;
+  }
+  &:focus {
+    outline: none;
+  }
+  &.filter-search {
+    border-radius: 1px;
+    display: inline;
+    justify-self: start;
+    width: 100%;
+    &1 {
+      grid-area: bar1;
+    }
+    &2 {
+      grid-area: bar2;
+    }
+    &3 {
+      grid-area: bar3;
+    }
+    &4 {
+      grid-area: bar4;
+    }
+  }
+}
+
+input[type="submit"] {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-right: 10px;
+  &:hover {
+    border: 1px solid #dfe1e5;
+    cursor: pointer;
+  }
+  &.advanced-search-button {
+    color: #fff;
+    background-color: #4d90fe;
+    border: 1px solid #3079ed;
+    border-radius: 3px;
+    font-weight: bold;
+    grid-area: button;
+    justify-self: end;
+    margin: 0;
+    width: 20%;
+  }
+}
